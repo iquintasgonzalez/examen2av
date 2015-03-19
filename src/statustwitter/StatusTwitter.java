@@ -29,11 +29,10 @@ public class StatusTwitter {
                 .setOAuthAccessToken("3055142195-sx2xtJqgPrjUXrP7Dtd8YuRHdzH6GsOMSHIG4nq")
                 .setOAuthAccessTokenSecret("gZekOzP1RBvqbOwg2zUHhVy4OcMSdub8YIeRTXGqGGVG7");
         twitter = new TwitterFactory(cb.build()).getInstance();
-        Paging pagina = new Paging();
-        Twitter mitwitter = new TwitterFactory().getInstance();
+        
  
         Query query = new Query("#Cangas");
-        QueryResult result = mitwitter.search(query);
+        QueryResult result = twitter.search(query);
         for (Status status : result.getTweets()) {
             System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
         }
